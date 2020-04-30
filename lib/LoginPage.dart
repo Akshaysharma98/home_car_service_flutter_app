@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'SignUp.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -52,11 +53,21 @@ class _LoginPageState extends State<LoginPage> {
                   //ispa jo input karoonga use validate karna ha string ka sath ki shi ha ki ni
                   if(emailInput.isEmpty)
                     {
+
                       return 'Please enter email address';
                     }
                 },
                 decoration: InputDecoration(
                   labelText: 'Email Address',
+                  
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.deepPurpleAccent[100]),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.deepPurpleAccent),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                  ),
                   
                   // border: InputBorder.none, //yeh niche ki line udane ka lia ha 
                 ),
@@ -75,6 +86,14 @@ class _LoginPageState extends State<LoginPage> {
                 },
                 decoration: InputDecoration(
                   labelText: 'Password',
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.deepPurpleAccent[100]),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.deepPurpleAccent),
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                  ),
                   //yeh button pe click kar ke password visible hoye 
                   suffix: IconButton(
                       onPressed: () {
@@ -127,7 +146,7 @@ class _LoginPageState extends State<LoginPage> {
                       }
                     },
                     //bina onpressed ka button ni dhikhayega yeh
-                    color: Colors.grey[900],
+                    color: Colors.deepPurpleAccent[100],
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
                     child: Text('Login',style: Theme.of(context).primaryTextTheme.button,),
                   )
@@ -152,10 +171,14 @@ class _LoginPageState extends State<LoginPage> {
                   {
                     //yeh tabhi chalega jab field empty na ho
                     //TODO yaha peh signup page jane ka code likhna ha 
+                     Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SignUp()),
+            );
 
                   },
                   //bina onpressed ka button ni dhikhayega yeh
-                  color: Colors.grey[900],
+                  color: Colors.deepPurpleAccent[100],
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
                   child: Text('Sign Up',style: Theme.of(context).primaryTextTheme.button,),
                 )
@@ -176,31 +199,33 @@ class _LoginPageState extends State<LoginPage> {
           // buildLogo(),
           // buildTitle(),//idhar hamra title ayega 
           // buildTitleLine(),
-          Image.asset('Images/login_background.png',height: 380,),
+          Image.asset('Images/login_background.jpg',fit: BoxFit.fill,),
 
-          Form(
-            key: _formkey,
-            child: ListView(
-              children:<Widget>[
-                SizedBox(height: 40.0,),
-                buildLogo(),
-                SizedBox(height: 20.0,),
-                buildTitle(),//idhar hamra title ayega 
-                buildTitleLine(),
-                SizedBox(height: 70.0,),
-                buildEmailFormField(),
-                SizedBox(height: 5.0,),
-                buildPasswordFormField(context),
-                buildPasswordText(),
-                SizedBox(height: 10.0,),
-                //login button
-                buildLoginButton(context),
-                SizedBox(height: 5.0,),
-                buildOrText(),
-                SizedBox(height: 5.0,),
-                buildSignUpButton(context)
-                
-              ],
+          Center(
+            child: Form(
+              key: _formkey,
+              child: ListView(
+                children:<Widget>[
+                  SizedBox(height: 40.0,),
+                  buildLogo(),
+                  SizedBox(height: 20.0,),
+                  buildTitle(),//idhar hamra title ayega 
+                  buildTitleLine(),
+                  SizedBox(height: 70.0,),
+                  buildEmailFormField(),
+                  SizedBox(height: 5.0,),
+                  buildPasswordFormField(context),
+                  buildPasswordText(),
+                  SizedBox(height: 10.0,),
+                  //login button
+                  buildLoginButton(context),
+                  SizedBox(height: 5.0,),
+                  buildOrText(),
+                  SizedBox(height: 5.0,),
+                  buildSignUpButton(context)
+                  
+                ],
+              ),
             ),
           ),
 

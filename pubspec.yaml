@@ -46,8 +46,9 @@ flutter:
   assets:
    - Images/white_final_big.jpg
    - Images/black_trans_small.png
-   - Images/login_background.png
+   - Images/login_background.jpg
    - Images/white_trans_small.png
+   - Images/login_background1.jpg
   
 
   # An image asset can refer to one or more resolution-specific "variants", see
