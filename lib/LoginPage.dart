@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'SignUp.dart';
 
 class LoginPage extends StatefulWidget {
@@ -85,6 +86,7 @@ class _LoginPageState extends State<LoginPage> {
                     }
                 },
                 decoration: InputDecoration(
+                  
                   labelText: 'Password',
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.deepPurpleAccent[100]),
@@ -112,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                             });
                           }
                       },
-                      icon: Icon(Icons.remove_red_eye,color: _eyeButtonColor),
+                      icon: Icon(Icons.remove_red_eye,color: _eyeButtonColor,size: 20.0,),
                       
                     ),
                 ),
@@ -133,8 +135,8 @@ class _LoginPageState extends State<LoginPage> {
   Align buildLoginButton(BuildContext context) {
     return Align(
                 child: SizedBox(
-                  height: 50,
-                  width: 250,
+                  height: 40,
+                  width: 200,
                   child: FlatButton(
                     onPressed: ()
                     {
@@ -164,16 +166,16 @@ class _LoginPageState extends State<LoginPage> {
   Align buildSignUpButton(BuildContext context) {
     return Align(
               child: SizedBox(
-                height: 50,
-                width: 250,
+                height: 40,
+                width: 200,
                 child: FlatButton(
                   onPressed: ()
                   {
                     //yeh tabhi chalega jab field empty na ho
                     //TODO yaha peh signup page jane ka code likhna ha 
                      Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => SignUp()),
+                      context,
+                    MaterialPageRoute(builder: (context) => SignUp()),
             );
 
                   },
@@ -189,7 +191,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      resizeToAvoidBottomInset : false,
       body: Stack(
         // padding: EdgeInsets.fromLTRB(22.0, 0, 22.0, 22.0),
         children: <Widget>[
@@ -208,10 +210,10 @@ class _LoginPageState extends State<LoginPage> {
                 children:<Widget>[
                   SizedBox(height: 40.0,),
                   buildLogo(),
-                  SizedBox(height: 20.0,),
+                  SizedBox(height: 10.0,),
                   buildTitle(),//idhar hamra title ayega 
                   buildTitleLine(),
-                  SizedBox(height: 70.0,),
+                  // SizedBox(height: 70.0,),
                   buildEmailFormField(),
                   SizedBox(height: 5.0,),
                   buildPasswordFormField(context),
