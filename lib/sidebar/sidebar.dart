@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:hcr/sidebar/menu_item.dart';
 import 'package:rxdart/rxdart.dart';
 
 class SideBar extends StatefulWidget {
@@ -69,10 +70,11 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
           children: <Widget>[
             Expanded(
               child:Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 color: Colors.blueAccent,
                 child: Column(
                   children: <Widget>[
-                    SizedBox(height:100,),
+                    SizedBox(height:70,),
                     ListTile(
                         title:Text(
                           "Akshay",
@@ -90,6 +92,42 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                           radius: 40,
                         ),        
                     ),
+                    Divider(
+                      height: 64,
+                      thickness: 0.5,
+                      color: Colors.blue[100],
+                      indent: 26,
+                      endIndent: 26,
+                    ),
+                    MenuItem(
+                      icon: Icons.home,
+                      title: "Home",
+                    ),
+                    MenuItem(
+                      icon: Icons.person,
+                      title: "My Account",
+                    ),
+                    MenuItem(
+                      icon: Icons.shopping_basket,
+                      title: "My Orders",
+                    ),
+                    MenuItem(
+                      icon: Icons.feedback,
+                      title: "Feedback",
+                    ),
+
+                    Divider(
+                      height: 64,
+                      thickness: 0.5,
+                      color: Colors.blue[100],
+                      indent: 26,
+                      endIndent: 26,
+                    ),
+
+                    MenuItem(
+                      icon: Icons.exit_to_app,
+                      title: "Logout",
+                    ),
 
                   ],
                 ),
@@ -103,16 +141,19 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                   onIconPressed();
                 },
 
-                child: Container(//yeh background ha homepage ka 
-                  width: 35,
-                  height: 110,
-                  color: Colors.blueAccent,
-                  alignment: Alignment.centerLeft,
-                  child: AnimatedIcon(
-                    progress: _animationController.view,
-                    icon: AnimatedIcons.menu_close,
-                    color: Colors.blue[200],
-                    size: 25,
+                child: ClipPath(
+                  clipper: CustomMenuClipper(),
+                  child: Container(//yeh background ha homepage ka 
+                    width: 35,
+                    height: 110,
+                    color: Colors.blueAccent,
+                    alignment: Alignment.centerLeft,
+                    child: AnimatedIcon(
+                      progress: _animationController.view,
+                      icon: AnimatedIcons.menu_close,
+                      color: Colors.blue[200],
+                      size: 25,
+                    ),
                   ),
                 ),
               ),
@@ -123,4 +164,32 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
       },
     );
   }
+}
+
+class CustomMenuClipper extends  CustomClipper<Path> {
+  @override
+  Path getClip(Size  size) {
+    Paint paint = Paint();
+    paint.color= Colors.white;
+
+    final width = size.width;
+    final height = size.height;
+
+    Path path = Path();
+    path.moveTo(0, 0);
+    path.quadraticBezierTo(0, 8, 10, 16);
+    path.quadraticBezierTo(width - 1, height / 2 - 20, width, height/2);
+    path.quadraticBezierTo(width + 1, height / 2 + 20, 10, height - 16);
+    path.quadraticBezierTo(0, height - 8, 0, height);
+    path.close();    
+    
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    
+    return true;
+  }
+
 }
