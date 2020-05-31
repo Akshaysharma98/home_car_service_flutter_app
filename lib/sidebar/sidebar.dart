@@ -61,7 +61,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
           duration: _animationduration,
           top: 0,
           bottom: 0,
-          left: isSideBarOpenedAsync.data ? 0 : 0,//sidebar is opened its true
+          left: isSideBarOpenedAsync.data ? 0 : -screenWidth,//sidebar is opened its true
           right: isSideBarOpenedAsync.data ? 0 : screenWidth - 45, //sidebar is closed
           //14.9 min
 
@@ -70,6 +70,29 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
             Expanded(
               child:Container(
                 color: Colors.blueAccent,
+                child: Column(
+                  children: <Widget>[
+                    SizedBox(height:100,),
+                    ListTile(
+                        title:Text(
+                          "Akshay",
+                          style: TextStyle(color:Colors.white , fontSize: 30,fontWeight: FontWeight.w800,),
+                        ),
+                        subtitle: Text(
+                          "akshaysharma@gmail.com",
+                          style: TextStyle(color:Colors.blue[200] , fontSize: 20,),
+                        ),             
+                        leading: CircleAvatar(
+                          child: Icon(
+                            Icons.perm_identity,
+                            color: Colors.white,
+                          ),
+                          radius: 40,
+                        ),        
+                    ),
+
+                  ],
+                ),
               ),
             ),
             Align(
