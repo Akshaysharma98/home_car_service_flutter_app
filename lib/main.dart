@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hcr/SignUp.dart';
+import 'package:hcr/sidebar/sidebar_layout.dart';
 import 'LoginPage.dart';
 import 'package:flutter/rendering.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SignUp(),
+      home: SideBarLayout(),
     );
   }
 }
