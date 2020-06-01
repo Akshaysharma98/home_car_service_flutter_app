@@ -5,12 +5,14 @@ import 'package:hcr/sidebar/sidebar.dart';
 class SideBarLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-          body: Stack(
-              children: <Widget>[
-                HomePage(),
-                SideBar(),
-              ],
+    return SafeArea(
+          child: Scaffold(
+            body: Stack(
+                children: <Widget>[
+                  HomePage(),
+                  SideBar(),
+                ],
+        ),
       ),
     );
   }
