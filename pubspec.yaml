@@ -26,6 +26,7 @@ dependencies:
   flutter_login:
   intl:
   rxdart:
+  carousel_pro:
 
 dev_dependencies:
   flutter_test:
@@ -50,7 +51,11 @@ flutter:
    - Images/login_background.jpg
    - Images/white_trans_small.png
    - Images/login_background1.jpg
-  
+   - Images/car_parts.png
+   - Images/pack.png
+   - Images/feedback.png
+   - Images/discount.png
+   - Images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
