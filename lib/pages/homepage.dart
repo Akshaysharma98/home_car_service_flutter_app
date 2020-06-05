@@ -29,22 +29,22 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
-            Positioned(
-              height: MediaQuery.of(context).size.height *0.18,
-              width: MediaQuery.of(context).size.width *1.85,
-                child: Icon(
-                Icons.photo_library,
-                color: Colors.blue,
-                size: 36,
-                ),
-            ),
+            // Positioned(
+            //   height: MediaQuery.of(context).size.height *0.18,
+            //   width: MediaQuery.of(context).size.width *1.85,
+            //     child: Icon(
+            //     Icons.photo_library,
+            //     color: Colors.blue,
+            //     size: 36,
+            //     ),
+            // ),
 
             Positioned(
-              top: 100,
+              top: 110,//100
               left:180,
               right: 50,
                 child: Container(
-                height: MediaQuery.of(context).size.height *0.28,
+                height: MediaQuery.of(context).size.height *0.28 + 2,
                 decoration: BoxDecoration(
                   color: Colors.green[200],
                   borderRadius: BorderRadius.all(const Radius.circular(10)),
@@ -86,7 +86,7 @@ class _HomePageState extends State<HomePage> {
             ),
 
             Positioned(
-              top: 100,
+              top: 110,
               left:30,
               right: 200,
                 child: Container(
@@ -132,7 +132,7 @@ class _HomePageState extends State<HomePage> {
             ),
 
             Positioned(
-              top: 200,
+              top: 210,//200
               left:30,
               right: 200,
                 child: Container(
@@ -178,7 +178,7 @@ class _HomePageState extends State<HomePage> {
             ),
 
             Positioned(
-              top: 300,
+              top: 310,
               left:60,
               child: Text('Our Work',
               style: TextStyle(
@@ -190,7 +190,7 @@ class _HomePageState extends State<HomePage> {
             ),
 
             Positioned(
-              top: 350,
+              top: 360,
               left: 30,
               right: 30,
               child: Container(
