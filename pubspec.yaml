@@ -27,6 +27,7 @@ dependencies:
   intl:
   rxdart:
   carousel_pro:
+  curved_navigation_bar:
 
 dev_dependencies:
   flutter_test:

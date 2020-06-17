@@ -144,7 +144,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                 child: ClipPath(
                   clipper: CustomMenuClipper(),
                   child: Container(//yeh dusra part ha sidebar ka  
-                    width: 35,//35
+                    width: 40,//35
                     height: 110,//110
                     color: Colors.blueAccent,
                     alignment: Alignment.center,//centerLeft

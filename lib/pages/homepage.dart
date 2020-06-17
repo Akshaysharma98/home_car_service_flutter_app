@@ -1,5 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:hcr/pages/myorders.dart';
+import 'package:hcr/pages/packages.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -13,9 +17,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
           child: Scaffold(
-        backgroundColor: Colors.grey[50],
-        body: Stack(
-          children: <Widget> [
+            backgroundColor: Colors.grey[50],
+            body: Stack(
+              children: <Widget> [
             Align(
               alignment: Alignment(-0.38, - 0.88),
               child: Container(
@@ -222,6 +226,7 @@ class _HomePageState extends State<HomePage> {
 
           ],
         ),
+
       ),
     );
   }

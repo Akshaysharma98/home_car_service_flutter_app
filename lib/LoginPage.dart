@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hcr/sidebar/sidebar_layout.dart';
 
 import 'SignUp.dart';
 
@@ -145,6 +146,10 @@ class _LoginPageState extends State<LoginPage> {
                         //yeh tabhi chalega jab field empty na ho
                         _formkey.currentState.save();
                         //TODO yaha peh next page jane ka code likhna ha 
+                        Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SideBarLayout()),
+                        );
                       }
                     },
                     //bina onpressed ka button ni dhikhayega yeh
